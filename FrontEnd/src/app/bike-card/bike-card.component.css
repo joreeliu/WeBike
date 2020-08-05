@@ -1,0 +1,36 @@
+.card {
+    width: 100%;
+  }
+  
+  .card > img {
+      margin-bottom: .75rem;
+      display: block;
+      width: 80%;
+      height: 20vh;
+      margin-left: auto;
+      margin-right: auto;
+      object-fit: cover;
+      margin-top: .75rem;
+  }
+  
+  .card-text {
+      font-size: 85%;
+  }
+  
+  .card-deck .card {
+    max-width: calc(25% - 30px);
+    float: left;
+    padding: .75rem;
+    margin-bottom: 2rem;
+    border: 0;
+    height: 100%;
+  }
+  
+  .card-footer {
+    padding: 0;
+  }
+
+  .card-title {
+    font-size: 100%;
+    font-weight: bold;
+}

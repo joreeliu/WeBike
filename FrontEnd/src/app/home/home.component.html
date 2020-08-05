@@ -1,0 +1,2 @@
+<a href={{loginURL}}><button *ngIf="!auth.token" class="btn btn-info">Log In</button></a>
+<button *ngIf="auth.token" class="btn btn-info" (click)="auth.logout()">Log Out</button>

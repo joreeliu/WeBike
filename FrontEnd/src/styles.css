@@ -1,0 +1,13 @@
+/* You can add global styles to this file, and also import other style files */
+@import "~bootstrap/dist/css/bootstrap.css";
+
+.btn{
+    background-color: rgb(148, 95, 148) !important;
+    border: none !important;
+    color: white;
+  }
+
+.btn:not(:disabled):not(.disabled) {
+    cursor: pointer;
+    color: white;
+}

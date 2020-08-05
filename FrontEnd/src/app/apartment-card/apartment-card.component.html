@@ -1,0 +1,15 @@
+<div *ngIf="apartment.name" class="card">
+    <img class="card-img-top" [src]="apartment.picture" [alt]="apartment.name">
+    <div class="card-body">
+        <h5 class="card-title">{{ apartment.name }}</h5>
+        <p class="card-text">Total bikes: {{ apartment.total_bikes}}</p>
+        <p class="card-text">Bikes to rent: {{ apartment.num_bike_for_rent}}</p>
+    </div>
+    <div class="card-footer">
+        <a *ngIf="showActions" routerLink="/apartmentBikes/{{apartment.id}}" class="btn btn-primary btn-block">Check Bikes</a>
+    </div>
+    <br>
+    <a *ngIf="auth.can('post:apartment')" routerLink="apartment/{{apartment.id}}" class="btn btn-primary btn-block">Edit Apartment</a>
+    <br>
+    <a *ngIf="auth.can('post:apartment')" (click)="delete($event)" class="btn btn-primary btn-block">Delete Apartment</a>
+</div>

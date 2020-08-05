@@ -1,0 +1,14 @@
+<div *ngIf="bike.name" class="card h-100">
+    <img class="card-img-top" [src]="bike.picture" [alt]="bike.name">
+    <div class="card-body">
+        <h5 class="card-title">{{ bike.name }}</h5>
+        <p class="card-text">Description: {{ bike.description}}</p>
+    </div>
+    <div class="card-footer">
+        <a class="btn btn-primary btn-block" [class.disabled]="showActions ? null : true" (click)="bookTrip($event)">Book</a>
+    </div>
+    <br>
+    <a *ngIf="auth.can('post:bikes')" routerLink="Bike/{{bike.id}}" class="btn btn-primary btn-block">Edit Bike</a>
+    <br>
+    <a *ngIf="auth.can('post:bikes')" (click)="delete($event)" class="btn btn-primary btn-block">Delete Bike</a>
+</div>

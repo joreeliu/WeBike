@@ -1,0 +1,34 @@
+<div class="container">
+
+	<div class="row" >
+		<div class="form-group col-sm-6">
+      <label for="activeEndDate">Start Date</label>
+			<app-date-time-picker [(ngModel)]="startDateModel" name="activeStartDate" (ngModelChange)="onDateChange($event)"></app-date-time-picker>
+		</div>
+	</div>
+	<div class="row" >
+		<div class="form-group col-sm-6">
+      <label for="activeEndDate">End Date</label>
+			<app-date-time-picker [(ngModel)]="endDateModel" name="activeEndDate" (ngModelChange)="onDateChange($event)"></app-date-time-picker>
+		</div>
+	</div>
+
+	<a *ngIf="auth.can('post:bikes')" routerLink="Bike/new" class="btn btn-primary btn-block">New Bike</a>
+
+  <!-- <h1> NgModel Date String</h1>
+	<div class="row" >
+		<div class="form-group col-sm-6">
+      <label for="activeEndDate">Active End Date</label>
+			<app-date-time-picker [(ngModel)]="stringDateModel" name="activeEndDate"></app-date-time-picker>
+
+		</div>
+	</div>
+</div> -->
+<div class="card-deck">
+    <ng-container *ngFor="let bike of fitleredBikes; let i = index">
+        <div class="col-sm-4">
+            <bike-card [bike]='bike' [show-actions]="showActions" [start_date]="startDateModel" [end_date]="endDateModel" (bookDone)="onDateChange($event)"></bike-card>
+        </div>
+        <div *ngIf="(i+1) % 3 == 0" class="w-100"></div>
+    </ng-container>
+</div>
